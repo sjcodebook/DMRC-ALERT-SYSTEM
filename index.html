@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>DMRC ALERT SYSTEM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiZhLKbiig7bNpmEbqO3hVuV8NkCDi1Q8&libraries=places"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container main">
+      <div class="row">
+        <div class="jumbotron">
+          <h1 id="main-title">DELHI METRO ALERT SYSTEM</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <form id="distance_form">
+            <div class="form-group">
+              <label>Origin: </label>
+              <input
+                class="form-control"
+                id="from_places"
+                placeholder="Enter a location"
+              />
+              <br />
+              <div class="btn btn-secondary" id="locationBtn">
+                Get my current location
+              </div>
+              <input id="origin" name="origin" required="" type="hidden" />
+            </div>
+
+            <div class="form-group">
+              <label>Destination: </label>
+              <input
+                class="form-control"
+                id="to_places"
+                placeholder="Enter a location"
+              />
+              <input
+                id="destination"
+                name="destination"
+                required=""
+                type="hidden"
+              />
+            </div>
+            <input class="btn btn-primary" type="submit" value="Calculate" />
+          </form>
+
+          <div id="result">
+            <ul class="list-group">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Transit Distance: <span id="dist"></span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Transit Duration: <span id="duration_text"></span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Total Fare: <span id="fare"></span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                FROM: <span id="from"></span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                TO: <span id="to"></span>
+              </li>
+            </ul>
+          </div>
+          <br />
+
+          <div id="alertSys">
+            <ul class="list-group">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                ----- You will get notified when distance is less than 400 mt.
+                -----
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Distance Left: <span id="dist_left"></span>
+              </li>
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                Time Left: <span id="time_left"></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
